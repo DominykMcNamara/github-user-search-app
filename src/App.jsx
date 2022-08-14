@@ -1,8 +1,13 @@
 import React from 'react'
+import { ThemeContextProvider } from './context/ThemeContext'
 
 export const App = () => {
   return (
-   <h1>Hello world</h1>
+   <ThemeContextProvider>
+    <div>
+      <h1>Hello World</h1>
+    </div>
+   </ThemeContextProvider>
   )
 }
 
