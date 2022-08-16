@@ -29,33 +29,33 @@ export const lightTheme = createTheme({
     },
   },
   typography: {
-    fontFamily: '"Space Mono", "Helvetica", sans-serif',
+    fontFamily: "'Space Mono', monospace",
     h1: {
-      fontFamily: '"Space Mono", "Helvetica", sans-serif',
+      fontFamily: "'Space Mono', monospace",
       fontWeight: 700,
       fontSize: "1.6rem",
       lineHeight: "2.3rem",
     },
     h2: {
-      fontFamily: '"Space Mono", "Helvetica", sans-serif',
+      fontFamily: "'Space Mono', monospace",
       fontWeight: 700,
       fontSize: "1.3rem",
       lineHeight: "2rem",
     },
     h3: {
-      fontFamily: '"Space Mono", "Helvetica", sans-serif',
+      fontFamily: "'Space Mono', monospace",
       fontWeight: 400,
       fontSize: "1rem",
       lineHeight: "1.5rem",
     },
     h4: {
-      fontFamily: '"Space Mono", "Helvetica", sans-serif',
+      fontFamily: "'Space Mono', monospace",
       fontWeight: 400,
       fontSize: "0.8rem",
       lineHeight: "1.2rem",
     },
     body1: {
-      fontFamily: '"Space Mono", "Helvetica", sans-serif',
+      fontFamily: "'Space Mono', monospace",
       fontWeight: 400,
       fontSize: "0.9rem",
       lineHeight: "1.5rem",
@@ -65,7 +65,7 @@ export const lightTheme = createTheme({
     MuiInput: {
       styleOverrides: {
         root: {
-          fontFamily: '"Space Mono", "Helvetica", sans-serif',
+          fontFamily: "'Space Mono', monospace",
           fontWeight: 400,
           fontSize: "1.1rem",
           lineHeight: "1.5rem",
@@ -95,13 +95,20 @@ export const lightTheme = createTheme({
       styleOverrides: {
         root: {
           height: "100vh",
-        }
+        },
       },
-      
+
       defaultProps: {
-        disableGutters: true
-      }
-    }
+        disableGutters: true,
+      },
+    },
+    MuiIconButton: {
+      defaultProps: {
+        disableFocusRipple: true,
+        disableRipple: true,
+        size: "small",
+      },
+    },
   },
 });
 
@@ -117,14 +124,14 @@ export const darkTheme = createTheme({
   palette: {
     mode: "dark",
     common: {
-      white: "#FEFEFE",
-      black: "#2B3442",
+      white: "#2B3442",
+      black: "#FEFEFE",
     },
     primary: {
       main: "#FFFFFF",
     },
     secondary: {
-      main: "#F6F8FF",
+      main: "#141D2F",
     },
     action: {
       main: "#0079FF",
@@ -134,33 +141,33 @@ export const darkTheme = createTheme({
     },
   },
   typography: {
-    fontFamily: '"Space Mono", "Helvetica", sans-serif',
+    fontFamily: "'Space Mono', monospace",
     h1: {
-      fontFamily: '"Space Mono", "Helvetica", sans-serif',
+      fontFamily: "'Space Mono', monospace",
       fontWeight: 700,
       fontSize: "1.6rem",
       lineHeight: "2.3rem",
     },
     h2: {
-      fontFamily: '"Space Mono", "Helvetica", sans-serif',
+      fontFamily: "'Space Mono', monospace",
       fontWeight: 700,
       fontSize: "1.3rem",
       lineHeight: "2rem",
     },
     h3: {
-      fontFamily: '"Space Mono", "Helvetica", sans-serif',
+      fontFamily: "'Space Mono', monospace",
       fontWeight: 400,
       fontSize: "1rem",
       lineHeight: "1.5rem",
     },
     h4: {
-      fontFamily: '"Space Mono", "Helvetica", sans-serif',
+      fontFamily: "'Space Mono', monospace",
       fontWeight: 400,
       fontSize: "0.8rem",
       lineHeight: "1.2rem",
     },
     body1: {
-      fontFamily: '"Space Mono", "Helvetica", sans-serif',
+      fontFamily: "'Space Mono', monospace",
       fontWeight: 400,
       fontSize: "0.9rem",
       lineHeight: "1.5rem",
@@ -170,13 +177,13 @@ export const darkTheme = createTheme({
     MuiInput: {
       styleOverrides: {
         root: {
-          fontFamily: '"Space Mono", "Helvetica", sans-serif',
+          fontFamily: "'Space Mono', monospace",
           fontWeight: 400,
           fontSize: "1.1rem",
           lineHeight: "1.5rem",
           borderRadius: "0.9rem",
           boxShadow: "0px 16px 30px -10px rgba(70, 96, 187, 0.198567)",
-          backgroundColor: "info"
+          backgroundColor: "info",
         },
       },
       defaultProps: {
@@ -197,9 +204,21 @@ export const darkTheme = createTheme({
       },
     },
     MuiContainer: {
+      styleOverrides: {
+        root: {
+          height: "100vh",
+        },
+      },
       defaultProps: {
-        disableGutters: true
-      }
-    }
+        disableGutters: true,
+      },
+    },
+    MuiIconButton: {
+      defaultProps: {
+        disableFocusRipple: true,
+        disableRipple: true,
+        size: "small",
+      },
+    },
   },
 });
