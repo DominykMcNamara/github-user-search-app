@@ -3,7 +3,7 @@ import React, { useState } from "react";
 import { Box } from "@mui/system";
 import { Button, IconButton, InputBase } from "@mui/material";
 import SearchIcon from "@mui/icons-material/Search";
-
+import { SearchButton } from "./SearchButton";
 export const SearchBar = ({ theme }) => {
   return (
     <Box>
@@ -16,20 +16,7 @@ export const SearchBar = ({ theme }) => {
           </IconButton>
         }
         endAdornment={
-          <Button
-            size="small"
-            variant="contained"
-            sx={{
-              mr: "1rem",
-              ml: "7rem",
-              p: "1rem",
-              width: "6rem",
-              height: "3rem",
-              borderRadius: "1rem",
-            }}
-          >
-            Search
-          </Button>
+         <SearchButton />
         }
         sx={{
           backgroundColor: theme.palette.common.white,
