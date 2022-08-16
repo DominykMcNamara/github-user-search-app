@@ -91,6 +91,17 @@ export const lightTheme = createTheme({
         variant: "body1",
       },
     },
+    MuiContainer: {
+      styleOverrides: {
+        root: {
+          height: "100vh",
+        }
+      },
+      
+      defaultProps: {
+        disableGutters: true
+      }
+    }
   },
 });
 
@@ -185,5 +196,10 @@ export const darkTheme = createTheme({
         variant: "body1",
       },
     },
+    MuiContainer: {
+      defaultProps: {
+        disableGutters: true
+      }
+    }
   },
 });
