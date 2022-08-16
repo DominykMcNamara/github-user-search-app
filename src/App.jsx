@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-import { AppContextProvider } from "./context/ThemeContext";
+import { AppContextProvider } from "./context/AppContext";
 import CssBaseline from "@mui/material/CssBaseline";
 import { ThemeProvider } from "@mui/material/styles";
 import { lightTheme, darkTheme } from "./styles/styles";

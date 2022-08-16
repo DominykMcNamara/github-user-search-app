@@ -1,16 +1,24 @@
 import React, { useState } from "react";
-
+import GithubApi from "../api/GithubApi";
+import { useTheme } from "@mui/material";
 import { Box } from "@mui/system";
 import { Button, IconButton, InputBase } from "@mui/material";
 import SearchIcon from "@mui/icons-material/Search";
 import { SearchButton } from "./SearchButton";
 
-export const SearchBar = ({ theme }) => {
+export const SearchBar = () => {
+  
+  const theme = useTheme()
+  
   const [user, setUser] = useState();
-
   const handleUserChange = (e) => {
     setUser(e.target.value);
+    console.log(user)
   };
+
+
+  
+ 
 
   return (
     <Box>
@@ -20,11 +28,9 @@ export const SearchBar = ({ theme }) => {
         value={user}
         onChange={handleUserChange}
         startAdornment={
-          <IconButton>
-            <SearchIcon sx={{ mr: "2rem" }} />
-          </IconButton>
+         <SearchIcon sx={{ mr: "2rem" }} />
         }
-        endAdornment={<SearchButton />}
+        endAdornment={<SearchButton user={user} />}
         sx={{
           backgroundColor: theme.palette.common.white,
           height: "4rem",
