@@ -4,7 +4,7 @@ import { ThemeContextProvider } from "./context/ThemeContext";
 import CssBaseline from "@mui/material/CssBaseline";
 import { ThemeProvider } from "@mui/material/styles";
 
-import { lightTheme } from "./styles/styles";
+import { lightTheme, darkTheme } from "./styles/styles";
 
 export const App = () => {
   return (
@@ -12,7 +12,7 @@ export const App = () => {
       <ThemeProvider theme={lightTheme}>
         <CssBaseline>
           <div>
-            <h1>Hello World</h1>
+           <h1>Hello world</h1>
           </div>
         </CssBaseline>
       </ThemeProvider>
