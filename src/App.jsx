@@ -1,6 +1,6 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 
-import { AppContextProvider } from "./context/AppContext";
+import { AppContext, AppContextProvider } from "./context/AppContext";
 import CssBaseline from "@mui/material/CssBaseline";
 import { ThemeProvider } from "@mui/material/styles";
 import { lightTheme, darkTheme } from "./styles/styles";
@@ -12,6 +12,7 @@ import { Box, IconButton, Typography } from "@mui/material";
 import Grid from "@mui/material/Grid";
 
 import { SearchBar } from "./components/SearchBar";
+import { ProfileCard } from "./components/ProfileCard";
 
 export const App = () => {
   const [darkMode, setDarkMode] = useState();
@@ -58,6 +59,9 @@ export const App = () => {
               </Grid>
               <Box>
                 <SearchBar theme={theme} />
+              </Box>
+              <Box>
+              <ProfileCard />
               </Box>
             </Box>
           </Container>

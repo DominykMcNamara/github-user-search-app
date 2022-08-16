@@ -4,7 +4,7 @@ export const AppContext = createContext()
 
 export const AppContextProvider = (props) => {
     const [colorMode, setColorMode] = useState(" ")
-    const [profile, setProfile] = useState()
+    const [profile, setProfile] = useState(null)
 
     return (
         <AppContext.Provider value={{ colorMode, setColorMode, profile, setProfile }}>

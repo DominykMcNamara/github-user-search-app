@@ -20,7 +20,7 @@ export const SearchButton = ({ user }) => {
     <>
       <Button
        onClick={(e) => searchUsers(e)}
-        disabled={user ? false : true }
+        disabled={user ? false : true}
         size="small"
         variant="contained"
         sx={{
