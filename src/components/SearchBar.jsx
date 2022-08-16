@@ -1,8 +1,7 @@
 import React, { useState } from "react";
-import GithubApi from "../api/GithubApi";
 import { useTheme } from "@mui/material";
 import { Box } from "@mui/system";
-import { Button, IconButton, InputBase } from "@mui/material";
+import { InputBase } from "@mui/material";
 import SearchIcon from "@mui/icons-material/Search";
 import { SearchButton } from "./SearchButton";
 
@@ -15,10 +14,6 @@ export const SearchBar = () => {
     setUser(e.target.value);
     console.log(user)
   };
-
-
-  
- 
 
   return (
     <Box>
