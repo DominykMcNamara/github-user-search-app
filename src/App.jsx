@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-import { ThemeContextProvider } from "./context/ThemeContext";
+import { AppContextProvider } from "./context/ThemeContext";
 import CssBaseline from "@mui/material/CssBaseline";
 import { ThemeProvider } from "@mui/material/styles";
 import { lightTheme, darkTheme } from "./styles/styles";
@@ -11,6 +11,8 @@ import { Container } from "@mui/system";
 import { Box, IconButton, Typography } from "@mui/material";
 import Grid from "@mui/material/Grid";
 
+import { SearchBar } from "./components/SearchBar";
+
 export const App = () => {
   const [darkMode, setDarkMode] = useState();
   const theme = darkMode ? darkTheme : lightTheme;
@@ -20,7 +22,7 @@ export const App = () => {
   };
 
   return (
-    <ThemeContextProvider>
+    <AppContextProvider>
       <ThemeProvider theme={theme}>
         <CssBaseline>
           <Container sx={{ backgroundColor: theme.palette.secondary.main }}>
@@ -54,10 +56,13 @@ export const App = () => {
                   </Box>
                 </Grid>
               </Grid>
+              <Box>
+                <SearchBar theme={theme} />
+              </Box>
             </Box>
           </Container>
         </CssBaseline>
       </ThemeProvider>
-    </ThemeContextProvider>
+    </AppContextProvider>
   );
 };

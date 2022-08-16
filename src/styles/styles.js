@@ -95,13 +95,13 @@ export const lightTheme = createTheme({
       styleOverrides: {
         root: {
           height: "100vh",
-          width: "100vw"
+          width: "100vw",
         },
       },
 
       defaultProps: {
         disableGutters: true,
-        maxWidth: "xl"
+        maxWidth: "xl",
       },
     },
     MuiIconButton: {
@@ -109,6 +109,18 @@ export const lightTheme = createTheme({
         disableFocusRipple: true,
         disableRipple: true,
         size: "small",
+      },
+    },
+    MuiButton: {
+      styleOverrides: {
+        root: {
+          color: "#ffffff"
+        }
+      },
+      defaultProps: {
+        disableFocusRipple: true,
+        disableRipple: true,
+        color: "action",
       },
     },
   },
@@ -216,10 +228,27 @@ export const darkTheme = createTheme({
       },
     },
     MuiIconButton: {
+      styleOverrides: {
+        root: {
+          color: "#ffffff",
+        },
+      },
       defaultProps: {
         disableFocusRipple: true,
         disableRipple: true,
         size: "small",
+      },
+    },
+    MuiButton: {
+      styleOverrides: {
+        root: {
+          color: "#ffffff",
+        },
+      },
+      defaultProps: {
+        disableFocusRipple: true,
+        disableRipple: true,
+        color: "action",
       },
     },
   },
