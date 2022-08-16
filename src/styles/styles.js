@@ -95,11 +95,13 @@ export const lightTheme = createTheme({
       styleOverrides: {
         root: {
           height: "100vh",
+          width: "100vw"
         },
       },
 
       defaultProps: {
         disableGutters: true,
+        maxWidth: "xl"
       },
     },
     MuiIconButton: {
