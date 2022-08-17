@@ -23,7 +23,7 @@ export const SearchBar = () => {
         value={user}
         onChange={handleUserChange}
         startAdornment={
-         <SearchIcon sx={{ mr: "2rem" }} />
+         <SearchIcon sx={{ mr: "2rem", color: theme.palette.action.main}} />
         }
         endAdornment={<SearchButton user={user} />}
         sx={{

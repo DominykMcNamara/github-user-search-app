@@ -5,7 +5,7 @@ export const ProfileCard = () => {
     const { profile } = useContext(AppContext)
   return (
     <>
-     <h1> {profile ? 'Hello world' : "Cannot find profile"} </h1>  
+     <h1> {profile ? profile.login : "Cannot find profile"} </h1>  
     </>
   )
 }
