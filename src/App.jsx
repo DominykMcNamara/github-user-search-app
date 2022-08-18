@@ -34,6 +34,7 @@ export const App = () => {
                 justifyContent="space-between"
                 alignContent="center"
                 alignItems="center"
+                sx={{width: "45rem"}}
               >
                 <Grid item>
                   <Typography
@@ -57,8 +58,8 @@ export const App = () => {
                   </Box>
                 </Grid>
               </Grid>
-              <Box>
-                <SearchBar theme={theme} />
+              <Box >
+                <SearchBar  />
               </Box>
               <Box>
               <ProfileCard />

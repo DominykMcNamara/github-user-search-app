@@ -16,14 +16,14 @@ export const SearchBar = () => {
   };
 
   return (
-    <Box>
+    <Box sx={{width: "45rem", margin: "0 auto"}}>
       <InputBase
         fullWidth={true}
         placeholder="Search GitHub username..."
         value={user}
         onChange={handleUserChange}
         startAdornment={
-         <SearchIcon sx={{ mr: "2rem" }} />
+         <SearchIcon sx={{ mr: "2rem", color: theme.palette.action.main}} />
         }
         endAdornment={<SearchButton user={user} />}
         sx={{
