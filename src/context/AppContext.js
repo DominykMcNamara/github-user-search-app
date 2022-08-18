@@ -1,14 +1,17 @@
-import React, { useState, createContext } from "react"
+import React, { useState, createContext } from "react";
+import { lightTheme, darkTheme } from "../styles/styles";
 
-export const AppContext = createContext()
+export const AppContext = createContext();
 
 export const AppContextProvider = (props) => {
-    const [theme, setTheme] = useState(" ")
-    const [profile, setProfile] = useState(null)
+ 
+  const [profile, setProfile] = useState(null);
 
-    return (
-        <AppContext.Provider value={{ theme, setTheme, profile, setProfile }}>
-            { props.children }
-        </AppContext.Provider>
-    )
-}
+  return (
+    <AppContext.Provider
+      value={{ profile, setProfile }}
+    >
+      {props.children}
+    </AppContext.Provider>
+  );
+};

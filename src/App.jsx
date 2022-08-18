@@ -13,7 +13,6 @@ import Grid from "@mui/material/Grid";
 
 import { SearchBar } from "./components/SearchBar";
 import { ProfileCard } from "./components/ProfileCard";
-import { Header } from "./components/Header";
 
 export const App = () => {
   const [darkMode, setDarkMode] = useState();
@@ -36,7 +35,15 @@ export const App = () => {
                 alignContent="center"
                 alignItems="center"
               >
-                <Header />
+                <Grid item>
+                  <Typography
+                    variant="h1"
+                    component="h1"
+                    sx={{ color: theme.palette.common.black }}
+                  >
+                    devfinder
+                  </Typography>
+                </Grid>
 
                 <Grid item>
                   <Box sx={{ display: "flex", flexDirection: "row" }}>
