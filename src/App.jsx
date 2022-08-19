@@ -1,6 +1,6 @@
-import React, { useState, useContext } from "react";
+import React, { useState} from "react";
 
-import { AppContext, AppContextProvider } from "./context/AppContext";
+import {  AppContextProvider } from "./context/AppContext";
 import CssBaseline from "@mui/material/CssBaseline";
 import { ThemeProvider } from "@mui/material/styles";
 import { lightTheme, darkTheme } from "./styles/styles";
@@ -34,7 +34,7 @@ export const App = () => {
                 justifyContent="space-between"
                 alignContent="center"
                 alignItems="center"
-                sx={{width: "45rem"}}
+                sx={{ width: "45rem" }}
               >
                 <Grid item>
                   <Typography
@@ -58,11 +58,11 @@ export const App = () => {
                   </Box>
                 </Grid>
               </Grid>
-              <Box >
-                <SearchBar  />
+              <Box>
+                <SearchBar />
               </Box>
               <Box>
-              <ProfileCard />
+                <ProfileCard />
               </Box>
             </Box>
           </Container>

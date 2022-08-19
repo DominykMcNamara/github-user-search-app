@@ -1,7 +1,12 @@
-import React, { useState, useContext } from "react";
-import { Avatar, Typography, useTheme } from "@mui/material";
+import React, { useContext } from "react";
+import { Avatar, Icon, Link, Typography, useTheme } from "@mui/material";
 import { AppContext } from "../context/AppContext";
 import { Box } from "@mui/system";
+
+import PlaceIcon from "@mui/icons-material/Place";
+import LinkIcon from "@mui/icons-material/Link";
+import TwitterIcon from "@mui/icons-material/Twitter";
+import BusinessIcon from "@mui/icons-material/Business";
 
 export const ProfileCard = () => {
   const { profile } = useContext(AppContext);
@@ -44,7 +49,7 @@ export const ProfileCard = () => {
                 </Typography>
                 <Typography variant="body1" component="p" sx={{ ml: "8rem" }}>
                   {profile.created_at
-                    ? `${new Date(profile.created_at).toDateString()}`
+                    ? `Joined ${new Date(profile.created_at).toDateString()}`
                     : " "}
                 </Typography>
               </Box>
@@ -101,6 +106,78 @@ export const ProfileCard = () => {
               </Typography>
               <Typography variant="h2" component="h2">
                 {profile.following ? profile.following : "0"}
+              </Typography>
+            </Box>
+          </Box>
+
+          <Box
+            sx={{
+              mt: "2rem",
+              ml: "4rem",
+              display: "flex",
+              flexDirection: "row",
+              alignContent: "center",
+              justifyContent: "space-evenly",
+            }}
+          >
+            <Box sx={{ display: "flex", flexDirection: "column" }}>
+              <Typography
+                variant="body1"
+                component="p"
+                sx={{
+                  color: theme.palette.primary.main
+                }}
+              >
+                <Icon sx={{ mr: "1rem" }}>
+                  <PlaceIcon />
+                </Icon>
+
+                {profile.location ? profile.location : "Not Available"}
+              </Typography>
+
+              <Typography
+                variant="body1"
+                component="p"
+                sx={{
+                  color: theme.palette.primary.main
+                }}
+              >
+                <Icon sx={{ mr: "1rem" }}>
+                  <LinkIcon />
+                </Icon>
+                <Link underline="none" href={profile.blog ? profile.blog : '#'}>
+                {profile.blog ? profile.blog : "Not Available"}
+                </Link>
+              </Typography>
+            </Box>
+            <Box sx={{ display: "flex", flexDirection: "column" }}>
+              <Typography
+                variant="body1"
+                component="p"
+                sx={{
+                  color: theme.palette.primary.main
+                }}
+              >
+                <Icon sx={{ mr: 1 }}>
+                  <TwitterIcon />
+                </Icon>
+
+                {profile.twitter_username
+                  ? profile.twitter_username
+                  : "Not Available"}
+              </Typography>
+              <Typography
+                variant="body1"
+                component="p"
+                sx={{
+                  color: theme.palette.primary.main
+                }}
+              >
+                <Icon sx={{ mr: 1 }}>
+                  <BusinessIcon />
+                </Icon>
+
+                {profile.company ? profile.company : "Not Available"}
               </Typography>
             </Box>
           </Box>
