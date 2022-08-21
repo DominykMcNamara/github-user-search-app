@@ -18,8 +18,8 @@ export const ProfileCard = () => {
       {profile && (
         <Box
           sx={{
-            width: "45rem",
-            height: "26rem",
+            width: { desktop: "45rem", tablet: "35rem", mobile: "20rem" },
+            height: { desktop: "26rem", tablet: "30rem", mobile: "32rem" },
             backgroundColor: theme.palette.common.white,
             borderRadius: "1rem",
             boxShadow: " 0rem 1rem 2rem -1rem rgba(70, 96, 187, 0.198567);",
@@ -28,26 +28,42 @@ export const ProfileCard = () => {
             pb: "2rem",
           }}
         >
+          {/* Header */}
           <Box sx={{ display: "flex", flexDirection: "row" }}>
             {profile.avatar_url && (
               <Avatar
                 alt="Profile Avatar"
                 src={profile.avatar_url}
-                sx={{ height: "7rem", width: "7rem", ml: "3rem" }}
+                sx={{
+                  height: { desktop: "7rem", mobile: "4rem" },
+                  width: { desktop: "7rem", mobile: "4rem" },
+                  ml: { desktop: "3rem", tablet: "5rem", mobile: "1rem", laptop: "4rem" },
+                }}
               />
             )}
-            <Box sx={{ ml: "2rem" }}>
+            <Box
+              sx={{ ml: "2rem", width: { tablet: "15rem", desktop: "35rem" } }}
+            >
               <Box
                 sx={{
                   display: "flex",
                   flexDirection: "row",
                   alignContent: "center",
+                  flexWrap: "wrap",
                 }}
               >
-                <Typography variant="h1" component="h1">
+                <Typography
+                  variant={"h1"}
+                  component="h1"
+                  sx={{ fontSize: { mobile: "1rem" } }}
+                >
                   {profile.login}
                 </Typography>
-                <Typography variant="body1" component="p" sx={{ ml: "8rem" }}>
+                <Typography
+                  variant="body1"
+                  component="p"
+                  sx={{ ml: { desktop: "8rem" }, fontSize: { mobile: "1rem" } }}
+                >
                   {profile.created_at
                     ? `Joined ${new Date(profile.created_at).toDateString()}`
                     : " "}
@@ -56,20 +72,29 @@ export const ProfileCard = () => {
               <Typography
                 variant="h3"
                 component="h2"
-                sx={{ mt: "0.5rem", color: theme.palette.action.main }}
+                sx={{
+                  mt: "0.5rem",
+                  color: theme.palette.action.main,
+                  fontSize: { mobile: "1rem" },
+                }}
               >
                 {profile.company ? profile.company : " "}
               </Typography>
               <Typography
                 variant="body1"
                 component="p"
-                sx={{ mt: "1rem", color: theme.palette.primary.main }}
+                sx={{
+                  mt: { desktop: "1rem", tablet: "2rem" },
+                  fontSize: { mobile: "1rem" },
+                  color: theme.palette.primary.main,
+                }}
               >
                 {profile.bio ? profile.bio : "This profile has no bio"}
               </Typography>
             </Box>
           </Box>
 
+          {/* Profile Details */}
           <Box
             sx={{
               display: "flex",
@@ -78,9 +103,12 @@ export const ProfileCard = () => {
               borderRadius: "1rem",
               pt: "1rem",
               pb: "1rem",
-              width: "30rem",
-              ml: "11.5rem",
+              padding: {mobile: "1rem"},
+              width: {desktop: "30rem", mobile: "17rem"},
+              ml: { desktop: "11.5rem", tablet: "8rem", laptop: "8rem" },
               mt: "2rem",
+              margin: { mobile: "2rem auto"},
+              textAlign: {mobile: "center"},
               backgroundColor: theme.palette.secondary.main,
             }}
           >
@@ -110,12 +138,13 @@ export const ProfileCard = () => {
             </Box>
           </Box>
 
+          {/* Social Info*/}
           <Box
             sx={{
               mt: "2rem",
-              ml: "4rem",
+              ml: { desktop: "4rem", tablet: "0rem", mobile: "1.5rem" },
               display: "flex",
-              flexDirection: "row",
+              flexDirection: {desktop: "row", mobile: "column", tablet: "row", laptop: "row"},
               alignContent: "center",
               justifyContent: "space-evenly",
             }}
@@ -125,7 +154,7 @@ export const ProfileCard = () => {
                 variant="body1"
                 component="p"
                 sx={{
-                  color: theme.palette.primary.main
+                  color: theme.palette.primary.main,
                 }}
               >
                 <Icon sx={{ mr: "1rem" }}>
@@ -139,14 +168,14 @@ export const ProfileCard = () => {
                 variant="body1"
                 component="p"
                 sx={{
-                  color: theme.palette.primary.main
+                  color: theme.palette.primary.main,
                 }}
               >
                 <Icon sx={{ mr: "1rem" }}>
                   <LinkIcon />
                 </Icon>
-                <Link underline="none" href={profile.blog ? profile.blog : '#'}>
-                {profile.blog ? profile.blog : "Not Available"}
+                <Link underline="none" href={profile.blog ? profile.blog : "#"}>
+                  {profile.blog ? profile.blog : "Not Available"}
                 </Link>
               </Typography>
             </Box>
@@ -155,7 +184,7 @@ export const ProfileCard = () => {
                 variant="body1"
                 component="p"
                 sx={{
-                  color: theme.palette.primary.main
+                  color: theme.palette.primary.main,
                 }}
               >
                 <Icon sx={{ mr: 1 }}>
@@ -170,7 +199,7 @@ export const ProfileCard = () => {
                 variant="body1"
                 component="p"
                 sx={{
-                  color: theme.palette.primary.main
+                  color: theme.palette.primary.main,
                 }}
               >
                 <Icon sx={{ mr: 1 }}>

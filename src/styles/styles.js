@@ -56,7 +56,7 @@ export const lightTheme = createTheme({
     },
     body1: {
       fontFamily: "'Space Mono', monospace",
-      fontWeight: 400,
+      fontWeight: 700,
       fontSize: "0.9rem",
       lineHeight: "1.5rem",
     },
@@ -101,7 +101,7 @@ export const lightTheme = createTheme({
 
       defaultProps: {
         disableGutters: true,
-        maxWidth: "xl",
+       maxWidth: "xl"
       },
     },
     MuiIconButton: {
@@ -114,7 +114,8 @@ export const lightTheme = createTheme({
     MuiButton: {
       styleOverrides: {
         root: {
-          color: "#ffffff"
+          color: "#ffffff",
+  
         }
       },
       defaultProps: {

@@ -6,6 +6,7 @@ export const AppContext = createContext();
 export const AppContextProvider = (props) => {
  
   const [profile, setProfile] = useState(null);
+  const [err, setErr] = useState(false)
 
   return (
     <AppContext.Provider

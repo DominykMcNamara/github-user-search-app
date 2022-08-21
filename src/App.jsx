@@ -1,6 +1,6 @@
-import React, { useState} from "react";
+import React, { useState } from "react";
 
-import {  AppContextProvider } from "./context/AppContext";
+import { AppContextProvider } from "./context/AppContext";
 import CssBaseline from "@mui/material/CssBaseline";
 import { ThemeProvider } from "@mui/material/styles";
 import { lightTheme, darkTheme } from "./styles/styles";
@@ -26,15 +26,24 @@ export const App = () => {
     <AppContextProvider>
       <ThemeProvider theme={theme}>
         <CssBaseline>
-          <Container sx={{ backgroundColor: theme.palette.secondary.main }}>
-            <Box sx={{ width: "36rem", margin: "0 auto", pt: "9rem" }}>
+          <Container  sx={{ backgroundColor: theme.palette.secondary.main}}>
+            <Box
+              component="header"
+              sx={{
+                margin: "0 auto",
+                pt: { desktop: "9rem", tablet: "5rem", mobile: "1rem" },
+              }}
+            >
               <Grid
                 container
                 direction="row"
                 justifyContent="space-between"
                 alignContent="center"
                 alignItems="center"
-                sx={{ width: "45rem" }}
+                sx={{
+                  width: { desktop: "45rem", tablet: "35rem", mobile: "20rem" },
+                  margin: { tablet: "0 auto", mobile: "0 auto" },
+                }}
               >
                 <Grid item>
                   <Typography
@@ -47,8 +56,19 @@ export const App = () => {
                 </Grid>
 
                 <Grid item>
-                  <Box sx={{ display: "flex", flexDirection: "row" }}>
-                    <Typography variant="body1" component="p">
+                  <Box
+                    sx={{
+                      display: "flex",
+                      flexDirection: "row",
+                    }}
+                  >
+                    <Typography
+                      variant="body1"
+                      component="p"
+                      sx={{
+                        color: theme.palette.primary.main,
+                      }}
+                    >
                       {darkMode ? "LIGHT" : "DARK"}
                     </Typography>
 
